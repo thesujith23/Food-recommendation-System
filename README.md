@@ -3,7 +3,11 @@ This Jupyter Notebook implements a food recommendation system using machine lear
 
 🚀 Features
 ✅ Data Preprocessing – Cleans and normalizes food dataset
+
 ✅ User Input Handling – Accepts age, gender, diet preference, and health goals
+
 ✅ Recommendation System – Uses cosine similarity to suggest meals
+
 ✅ Machine Learning Model – Trains a Random Forest Classifier for validation
+
 ✅ Nutritional Analysis – Adjusts nutrient intake based on health conditions
