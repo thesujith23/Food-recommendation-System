@@ -1,0 +1,170 @@
+/* Reset and Base Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* Main Container */
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+    margin-top: 40px;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #76c7c0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Content and Form Styling */
+.content {
+    padding: 20px;
+}
+
+.recommendation-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #b3b3b3;
+    font-size: 1.1em;
+}
+
+input[type="number"], select {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #333;
+    color: #f0f0f0;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+input[type="number"]:focus, select:focus {
+    background-color: #444;
+    border-color: #76c7c0;
+}
+
+.submit-btn {
+    padding: 15px;
+    font-size: 1.1em;
+    color: #121212;
+    background-color: #76c7c0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(118, 199, 192, 0.3);
+}
+
+/* Results Section */
+.results {
+    margin-top: 40px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    animation: slideUp 1s ease-in-out;
+}
+
+.results h2 {
+    color: #f0f0f0;
+    text-align: center;
+}
+
+.meal {
+    margin-bottom: 20px;
+}
+
+.meal h3 {
+    color: #76c7c0;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #2a2a2a;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+li:hover {
+    background-color: #3b3b3b;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+    .form-group {
+        flex: 1 1 100%;
+    }
+
+    .submit-btn {
+        font-size: 1em;
+    }
+}

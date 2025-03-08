@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEALMATE: Food Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007BFF;  /* Changed from green (#4CAF50) to blue (#007BFF) */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #007BFF;  /* Changed from green (#4CAF50) to blue (#007BFF) */
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;  /* Darker blue for hover effect */
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .meal {
+            margin-bottom: 10px;
+        }
+        .meal h3 {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MEALMATE: Your Personal Food Companion</h1>
+</header>
+
+<div class="container">
+    <form method="POST">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="" selected disabled>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <label for="health_condition">Health Condition:</label>
+        <select id="health_condition" name="health_condition" required>
+            <option value="" selected disabled>Select Health Condition</option>
+            <option value="weight loss">Weight Loss</option>
+            <option value="weight gain">Weight Gain</option>
+            <option value="diabetes">Diabetes</option>
+            <option value="hypertension">Hypertension</option>
+            <option value="high cholesterol">High Cholesterol</option>
+            <option value="digestive health">Digestive Health</option>
+            <option value="bone health">Bone Health</option>
+            <option value="heart health">Heart Health</option>
+            <option value="immunity boosting">Immunity Boosting</option>
+            <option value="skin health">Skin Health</option>
+        </select>
+
+        <label for="diet_preference">Diet Preference:</label>
+        <select id="diet_preference" name="diet_preference" required>
+            <option value="" selected disabled>Select Diet Preference</option>
+            <option value="veg">Vegetarian</option>
+            <option value="non-veg">Non-Vegetarian</option>
+        </select>
+
+        <button type="submit">Get Recommendations</button>
+    </form>
+
+    {% if show_results %}
+    <div class="result">
+        <h2>Meal Recommendations:</h2>
+        {% for meal, foods in meals.items() %}
+            <div class="meal">
+                <h3>{{ meal }}:</h3>
+                <ul>
+                    {% for food in foods %}
+                        <li>{{ food }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
